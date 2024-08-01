@@ -1,13 +1,15 @@
-<mat-toolbar class="header">
-  <img src="/pokemon-logo.png" height=50/>
-  <button mat-icon-button [matMenuTriggerFor]="menu"><mat-icon>menu</mat-icon></button>
-  <mat-menu #menu="matMenu" xPosition="after">
-    @for (item of menuItems; track item) {
-      <button mat-menu-item (click)="onMenuClick(item)"
-      >{{item}}</button>
+<div class="page">
+  <mat-toolbar class="header">
+    <img src="/pokemon-logo.png" height=50 />
+    <button mat-icon-button [matMenuTriggerFor]="menu"><mat-icon style="color: white;"
+        aria-hidden="false">menu</mat-icon></button>
+    <mat-menu #menu="matMenu" xPosition="after">
+      @for (item of menuItems; track item) {
+      <button mat-menu-item (click)="onMenuClick(item)">{{item}}</button>
 
-    }
-  </mat-menu>
-</mat-toolbar>
+      }
+    </mat-menu>
+  </mat-toolbar>
 
-<app-poke-list></app-poke-list>
+  <app-poke-list></app-poke-list>
+</div>

@@ -1,25 +1,26 @@
-
-
 <div class="display-grid">
   @for (pokemon of pokemons; track pokemon) {
-    <mat-card class="poke-card">
-      <mat-card-header>
-        <mat-card-title>{{pokemon.name}}</mat-card-title>
-      </mat-card-header>
-      <div class="img-wrapper">
-        <img [src]="pokemon.imgUrl" width=75 height=75 />
-      </div>
-      <!-- grass, poison, fire, bug, flying, ground, electric, water, normal, fighting -->
-      <mat-chip-set>
-        @for (pokemonType of pokemon.pokemonTypes; track pokemonType) {
-          <mat-chip [ngClass]="{
-            'background-blue':(pokemonType==='Water' || (pokemonType==='Flying')),
-            'background-red':(pokemonType==='Poison' || (pokemonType==='Fighting')),
+  <mat-card class="poke-card">
+    <mat-card-header class="card-header">
+      <mat-card-title>{{pokemon.name}}</mat-card-title>
+    </mat-card-header>
+    <div class="img-wrapper">
+      <img [src]="pokemon.imgUrl" width=75 height=75 />
+    </div>
+    <!-- grass, poison, fire, bug, flying, ground, electric, water, normal, fighting -->
+    <mat-chip-set class="type-row">
+      @for (pokemonType of pokemon.pokemonTypes; track pokemonType) {
+      <mat-basic-chip class="type-chip" [ngClass]="{
+            'background-blue':(pokemonType==='Water' || (pokemonType==='Flying') || (pokemonType==='Ice')),
+            'background-red':(pokemonType==='Poison' || pokemonType==='Fighting' || pokemonType==='Fire' || pokemonType==='Dragon'),
             'background-green':(pokemonType==='Grass' || (pokemonType==='Ground')),
-            }">{{pokemonType}}</mat-chip>
-        }
-      </mat-chip-set>
-    </mat-card>
+            'background-orange':(pokemonType==='Bug' || (pokemonType==='Electric') || (pokemonType==='Psychic')),
+            'background-default':(pokemonType==='Normal' || pokemonType==='Rock' || pokemonType==='Steel'),
+            'background-pink': (pokemonType==='Fairy' || pokemonType==='Ghost')
+            }">{{pokemonType}}</mat-basic-chip>
+      }
+    </mat-chip-set>
+  </mat-card>
 
   }
 </div>

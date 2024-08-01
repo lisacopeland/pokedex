@@ -1,5 +1,6 @@
 .display-grid {
   display: flex;
+  background-color: #a3c5cf;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
@@ -8,10 +9,14 @@
   padding: 20px;
 }
 
- .poke-card {
+.poke-card {
   width: 250px;
-  height: 250px;
+  height: 200px;
   padding: 10px;
+}
+
+.card-header {
+  padding: 0px;
 }
 
 .img-wrapper {
@@ -20,22 +25,38 @@
   padding: 10px;
 }
 
+.type-chip {
+  padding: 5px;
+  border-radius: 10px;
+  margin: 0px 5px;
+}
+
 .background-blue {
+  color: white;
   background-color: blue;
 }
 
 .background-green {
+  color: white;
   background-color: green;
 }
 
 .background-red {
+  color: white;
   background-color: red;
 }
 
 .background-orange {
+  color: white;
   background-color: orange;
 }
 
+.background-pink {
+  color: white;
+  background-color: pink;
+}
+
 .background-default {
+  color: white;
   background-color: grey;
 }
