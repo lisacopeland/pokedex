@@ -5,11 +5,12 @@ import {MatChipsModule} from '@angular/material/chips';
 import { MatButtonModule } from '@angular/material/button';
 import { Pokemon } from '../models/pokemon.model';
 import { PokemonService } from '../services/pokemon.service';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-poke-list',
   standalone: true,
-  imports: [MatButtonModule, MatCardModule, MatChipsModule],
+  imports: [NgClass, MatButtonModule, MatCardModule, MatChipsModule],
   templateUrl: './poke-list.component.html',
   styleUrl: './poke-list.component.scss'
 })

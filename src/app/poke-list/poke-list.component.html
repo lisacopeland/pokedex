@@ -9,10 +9,14 @@
       <div class="img-wrapper">
         <img [src]="pokemon.imgUrl" width=75 height=75 />
       </div>
-
+      <!-- grass, poison, fire, bug, flying, ground, electric, water, normal, fighting -->
       <mat-chip-set>
         @for (pokemonType of pokemon.pokemonTypes; track pokemonType) {
-          <mat-chip>{{pokemonType}}</mat-chip>
+          <mat-chip [ngClass]="{
+            'background-blue':(pokemonType==='Water' || (pokemonType==='Flying')),
+            'background-red':(pokemonType==='Poison' || (pokemonType==='Fighting')),
+            'background-green':(pokemonType==='Grass' || (pokemonType==='Ground')),
+            }">{{pokemonType}}</mat-chip>
         }
       </mat-chip-set>
     </mat-card>
